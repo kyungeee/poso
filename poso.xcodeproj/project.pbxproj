@@ -8,17 +8,47 @@
 
 /* Begin PBXBuildFile section */
 		0607B2342B05034000373BBD /* posoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B2332B05034000373BBD /* posoApp.swift */; };
-		0607B2362B05034000373BBD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B2352B05034000373BBD /* ContentView.swift */; };
 		0607B2382B05034400373BBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0607B2372B05034400373BBD /* Assets.xcassets */; };
 		0607B23B2B05034400373BBD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0607B23A2B05034400373BBD /* Preview Assets.xcassets */; };
+		0607B26B2B0504DF00373BBD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B2672B0504DF00373BBD /* MapView.swift */; };
+		0607B26C2B0504DF00373BBD /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B2682B0504DF00373BBD /* WelcomeView.swift */; };
+		0607B26D2B0504DF00373BBD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B2692B0504DF00373BBD /* ContentView.swift */; };
+		0607B26E2B0504DF00373BBD /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B26A2B0504DF00373BBD /* MyPageView.swift */; };
+		0607B2702B0504E600373BBD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B26F2B0504E600373BBD /* Extensions.swift */; };
+		0607B2722B0504F600373BBD /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B2712B0504F600373BBD /* ModelData.swift */; };
+		0607B2852B0505CB00373BBD /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B2842B0505CB00373BBD /* WeatherManager.swift */; };
+		0607B2862B0505CB00373BBD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B2832B0505CB00373BBD /* LocationManager.swift */; };
+		0607B2882B05061600373BBD /* WeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B2872B05061600373BBD /* WeatherRow.swift */; };
+		0607B28D2B05D6A700373BBD /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B28C2B05D6A700373BBD /* ChartView.swift */; };
+		06EE652B2B073432005F8EC9 /* FirebaseRealTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE652A2B073432005F8EC9 /* FirebaseRealTimeManager.swift */; };
+		06EE652D2B073BDF005F8EC9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06EE652C2B073BDF005F8EC9 /* GoogleService-Info.plist */; };
+		06EE652F2B073CD4005F8EC9 /* MyCarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE652E2B073CD4005F8EC9 /* MyCarStore.swift */; };
+		06EE65322B073D92005F8EC9 /* MyCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE65312B073D92005F8EC9 /* MyCar.swift */; };
+		157FC8C0291541771EAC6835 /* Pods_poso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C0BAF0EE5A45C3DEB731B7 /* Pods_poso.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0607B2302B05034000373BBD /* poso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = poso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0607B2332B05034000373BBD /* posoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = posoApp.swift; sourceTree = "<group>"; };
-		0607B2352B05034000373BBD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0607B2372B05034400373BBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0607B23A2B05034400373BBD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0607B2672B0504DF00373BBD /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		0607B2682B0504DF00373BBD /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		0607B2692B0504DF00373BBD /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0607B26A2B0504DF00373BBD /* MyPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		0607B26F2B0504E600373BBD /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0607B2712B0504F600373BBD /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		0607B2832B0505CB00373BBD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		0607B2842B0505CB00373BBD /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		0607B2872B05061600373BBD /* WeatherRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRow.swift; sourceTree = "<group>"; };
+		0607B28C2B05D6A700373BBD /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		06EE652A2B073432005F8EC9 /* FirebaseRealTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRealTimeManager.swift; sourceTree = "<group>"; };
+		06EE652C2B073BDF005F8EC9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		06EE652E2B073CD4005F8EC9 /* MyCarStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarStore.swift; sourceTree = "<group>"; };
+		06EE65312B073D92005F8EC9 /* MyCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCar.swift; sourceTree = "<group>"; };
+		1ADFB91D8FFA499E9087BADE /* Pods-poso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-poso.release.xcconfig"; path = "Target Support Files/Pods-poso/Pods-poso.release.xcconfig"; sourceTree = "<group>"; };
+		69603FFC3C37AE43FF918E3C /* Pods-poso.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-poso.debug.xcconfig"; path = "Target Support Files/Pods-poso/Pods-poso.debug.xcconfig"; sourceTree = "<group>"; };
+		E1C0BAF0EE5A45C3DEB731B7 /* Pods_poso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_poso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				157FC8C0291541771EAC6835 /* Pods_poso.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +68,8 @@
 			children = (
 				0607B2322B05034000373BBD /* poso */,
 				0607B2312B05034000373BBD /* Products */,
+				E669496C525FBD9FD9C6B64A /* Pods */,
+				86DE6BE541AD653E985827FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,8 +85,15 @@
 			isa = PBXGroup;
 			children = (
 				0607B2332B05034000373BBD /* posoApp.swift */,
-				0607B2352B05034000373BBD /* ContentView.swift */,
+				0607B2822B0505CB00373BBD /* Manager */,
+				06EE65302B073D7F005F8EC9 /* Model */,
+				0607B28B2B05C93A00373BBD /* Store */,
+				0607B2892B05061A00373BBD /* Cell */,
+				0607B2662B0504DF00373BBD /* View */,
+				0607B28A2B0518FE00373BBD /* Ex */,
+				0607B2712B0504F600373BBD /* ModelData.swift */,
 				0607B2372B05034400373BBD /* Assets.xcassets */,
+				06EE652C2B073BDF005F8EC9 /* GoogleService-Info.plist */,
 				0607B2392B05034400373BBD /* Preview Content */,
 			);
 			path = poso;
@@ -67,6 +107,77 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		0607B2662B0504DF00373BBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0607B2672B0504DF00373BBD /* MapView.swift */,
+				0607B2682B0504DF00373BBD /* WelcomeView.swift */,
+				0607B2692B0504DF00373BBD /* ContentView.swift */,
+				0607B26A2B0504DF00373BBD /* MyPageView.swift */,
+				0607B28C2B05D6A700373BBD /* ChartView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0607B2822B0505CB00373BBD /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				0607B2842B0505CB00373BBD /* WeatherManager.swift */,
+				0607B2832B0505CB00373BBD /* LocationManager.swift */,
+				06EE652A2B073432005F8EC9 /* FirebaseRealTimeManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		0607B2892B05061A00373BBD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0607B2872B05061600373BBD /* WeatherRow.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0607B28A2B0518FE00373BBD /* Ex */ = {
+			isa = PBXGroup;
+			children = (
+				0607B26F2B0504E600373BBD /* Extensions.swift */,
+			);
+			path = Ex;
+			sourceTree = "<group>";
+		};
+		0607B28B2B05C93A00373BBD /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				06EE652E2B073CD4005F8EC9 /* MyCarStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		06EE65302B073D7F005F8EC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				06EE65312B073D92005F8EC9 /* MyCar.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		86DE6BE541AD653E985827FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1C0BAF0EE5A45C3DEB731B7 /* Pods_poso.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E669496C525FBD9FD9C6B64A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				69603FFC3C37AE43FF918E3C /* Pods-poso.debug.xcconfig */,
+				1ADFB91D8FFA499E9087BADE /* Pods-poso.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +185,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0607B23E2B05034400373BBD /* Build configuration list for PBXNativeTarget "poso" */;
 			buildPhases = (
+				98CF72F0828608F6CE09C7C7 /* [CP] Check Pods Manifest.lock */,
 				0607B22C2B05034000373BBD /* Sources */,
 				0607B22D2B05034000373BBD /* Frameworks */,
 				0607B22E2B05034000373BBD /* Resources */,
+				EDBF7012C6EA54457A9FE19D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,19 +239,74 @@
 			buildActionMask = 2147483647;
 			files = (
 				0607B23B2B05034400373BBD /* Preview Assets.xcassets in Resources */,
+				06EE652D2B073BDF005F8EC9 /* GoogleService-Info.plist in Resources */,
 				0607B2382B05034400373BBD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		98CF72F0828608F6CE09C7C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-poso-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDBF7012C6EA54457A9FE19D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-poso/Pods-poso-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-poso/Pods-poso-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-poso/Pods-poso-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0607B22C2B05034000373BBD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0607B2362B05034000373BBD /* ContentView.swift in Sources */,
+				0607B2722B0504F600373BBD /* ModelData.swift in Sources */,
+				0607B26E2B0504DF00373BBD /* MyPageView.swift in Sources */,
+				06EE65322B073D92005F8EC9 /* MyCar.swift in Sources */,
+				0607B2852B0505CB00373BBD /* WeatherManager.swift in Sources */,
+				0607B2862B0505CB00373BBD /* LocationManager.swift in Sources */,
+				0607B26D2B0504DF00373BBD /* ContentView.swift in Sources */,
+				0607B2882B05061600373BBD /* WeatherRow.swift in Sources */,
+				0607B26C2B0504DF00373BBD /* WelcomeView.swift in Sources */,
+				06EE652B2B073432005F8EC9 /* FirebaseRealTimeManager.swift in Sources */,
+				06EE652F2B073CD4005F8EC9 /* MyCarStore.swift in Sources */,
+				0607B28D2B05D6A700373BBD /* ChartView.swift in Sources */,
+				0607B26B2B0504DF00373BBD /* MapView.swift in Sources */,
 				0607B2342B05034000373BBD /* posoApp.swift in Sources */,
+				0607B2702B0504E600373BBD /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +434,7 @@
 		};
 		0607B23F2B05034400373BBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69603FFC3C37AE43FF918E3C /* Pods-poso.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,6 +464,7 @@
 		};
 		0607B2402B05034400373BBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ADFB91D8FFA499E9087BADE /* Pods-poso.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
