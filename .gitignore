@@ -103,3 +103,5 @@ poso/GoogleService-Info.plist
 
 # End of https://www.toptal.com/developers/gitignore/api/swift
 
+Podfile
+Podfile.lock
