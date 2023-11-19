@@ -9,6 +9,7 @@ import SwiftUI
 import CoreLocation
 import Combine
 import UIKit
+import MessageUI
 
 
 struct MyPageView: View {
@@ -17,6 +18,7 @@ struct MyPageView: View {
     @State var weather: ResponseBody
     @State var rain: String = "0"
     @State var progressValue: Float = 0.8
+    @State private var isMessageComposeVisible = false
     
     var weatherManager = WeatherManager()
     
@@ -43,6 +45,7 @@ struct MyPageView: View {
                         .fontWeight(.light)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundColor(.white)
                 
 //                Spacer()
                 
@@ -72,24 +75,41 @@ struct MyPageView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 280)
-                            .padding(.bottom, 30)
+                            .padding(.bottom, 40)
                         Spacer()
                     }
                     Spacer()
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)
             }
-            .padding(.bottom, 200)
+            .sheet(isPresented: $isMessageComposeVisible) {
+                       MessageComposeView(messageBody: "Hello", recipients: ["+821025888219"])
+                   }
+            .padding(.bottom, 300)
             .padding(.horizontal)
 //            .frame(maxWidth: .infinity, alignment: .leading)
             
             VStack {
                 Spacer()
-                VStack(alignment: .leading, spacing: 20) {
-                    Text("Weather now")
-                        .bold()
-                        .padding(.bottom, 10)
-                    
+                VStack(alignment: .leading) {
+                    HStack{
+                        Text("Weather now")
+                            .bold()
+                        Spacer()
+                        
+                        Button(action: {
+//                            self.isMessageComposeVisible.toggle()
+                            
+                        }, label: {
+                            VStack {
+                                Image(systemName: "exclamationmark.bubble.circle.fill")
+                                    .font(.largeTitle)
+                                Text("침수 신고")
+                                    .font(.callout)
+                            }
+                        })
+                    }
+                   
                     VStack {
 //                        Text("센서 물 감지 퍼센트")
 //                            .fontWeight(.light)
@@ -136,7 +156,7 @@ struct MyPageView: View {
 //        .background(Color(hue: 0.656, saturation: 0.787, brightness: 0.354))
 
         .background(Color(hue: 0.656, saturation: 0.787, brightness: 0.354))
-        .preferredColorScheme(.dark)
+//        .preferredColorScheme(.dark)
         .onAppear {
             if let rainData = weather.rain {
                 self.rain = String(rainData.the1H)
@@ -148,6 +168,12 @@ struct MyPageView: View {
         let randomValue = Float([0.012, 0.022, 0.034, 0.016, 0.11].randomElement()!)
         self.progressValue += randomValue
     }
+    
+    func sendMessage() {
+        let sms: String = "sms:+821025888219&body=Hello"
+        let strURL: String = sms.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        UIApplication.shared.open(URL.init(string: strURL)!, options: [:], completionHandler: nil)
+    }
 }
 //
 //struct WeatherView_Previews: PreviewProvider {
@@ -156,3 +182,27 @@ struct MyPageView: View {
 //    }
 //}
 
+struct MessageComposeView: UIViewControllerRepresentable {
+    let messageBody: String
+    let recipients: [String]
+
+    func makeUIViewController(context: Context) -> UIViewController {
+        let messageComposeVC = MFMessageComposeViewController()
+        messageComposeVC.body = messageBody
+        messageComposeVC.recipients = recipients
+        messageComposeVC.messageComposeDelegate = context.coordinator
+        return messageComposeVC
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+
+    func makeCoordinator() -> Coordinator {
+        return Coordinator()
+    }
+
+    class Coordinator: NSObject, MFMessageComposeViewControllerDelegate {
+        func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+            controller.dismiss(animated: true)
+        }
+    }
+}

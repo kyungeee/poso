@@ -36,14 +36,15 @@ class MapViewCoordinator: NSObject, MKMapViewDelegate {
         let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "customAnnotation")
         annotationView.markerTintColor = .black
         annotationView.glyphImage = UIImage(systemName: "car")
+        annotationView.frame = CGRect(x: 0, y: 0, width: 100, height: 100) // 설정하려는 크기로 조절
         return annotationView
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if let circleOverlay = overlay as? MKCircle {
               let circleRenderer = MKCircleRenderer(circle: circleOverlay)
-              circleRenderer.fillColor = UIColor.blue.withAlphaComponent(0.1) // Set the fill color of the circle
-              circleRenderer.strokeColor = UIColor.blue // Set the border color of the circle
+              circleRenderer.fillColor = UIColor.red.withAlphaComponent(0.1) // Set the fill color of the circle
+            circleRenderer.strokeColor = UIColor.red // Set the border color of the circle
               circleRenderer.lineWidth = 1 // Set the border width
               return circleRenderer
           }
@@ -52,18 +53,26 @@ class MapViewCoordinator: NSObject, MKMapViewDelegate {
     
     /// This is where the delegate gets the object for the selected annotation
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        if let v = view.annotation as? LandmarkAnnotation {
-            print(v.coordinate)
+        if let selectedAnnotation = view.annotation as? LandmarkAnnotation {
+//            self.selectedAnnotation = selectedAnnotation
+//            isModalPresented = true
         }
     }
 }
 
 
 struct MapView: UIViewRepresentable {
+//    @State var isModalPresented: Bool
+//    @State private var selectedAnnotation: LandmarkAnnotation? = nil
+    
+//    var markers: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(
+//                                                latitude: 34.055404, longitude: -118.249278),CLLocationCoordinate2D(
+//                                                    latitude: 34.054097, longitude: -118.249664), CLLocationCoordinate2D(latitude: 34.053786, longitude: -118.247636)]
     
     var markers: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(
-                                                latitude: 34.055404, longitude: -118.249278),CLLocationCoordinate2D(
-                                                    latitude: 34.054097, longitude: -118.249664), CLLocationCoordinate2D(latitude: 34.053786, longitude: -118.247636)]
+        latitude: 37.49273658206116, longitude: 126.67943089174322)]
+    
+    
     var convertedMarkers: [LandmarkAnnotation] = []
     
     init() {
@@ -77,7 +86,7 @@ struct MapView: UIViewRepresentable {
     func cordToMark(locations: [CLLocationCoordinate2D]) -> [LandmarkAnnotation] {
         var marks: [LandmarkAnnotation] = []
         for cord in locations {
-            let mark = LandmarkAnnotation(title: "Test", subtitle: "Sub", coordinate: cord)
+            let mark = LandmarkAnnotation(title: "MyCar", subtitle: "Sub", coordinate: cord)
             marks.append(mark)
         }
         return marks
@@ -89,7 +98,7 @@ struct MapView: UIViewRepresentable {
     
     func updateUIView(_ view: MKMapView, context: Context){
         let coordinate = CLLocationCoordinate2D(
-            latitude: 34.0537767, longitude: -118.248)
+            latitude: 37.49273658206116, longitude: 126.67943089174322)
         let mapCamera = MKMapCamera()
         mapCamera.centerCoordinate = coordinate
         mapCamera.pitch = 10
@@ -99,11 +108,20 @@ struct MapView: UIViewRepresentable {
         view.delegate = context.coordinator
         view.addAnnotations(self.convertedMarkers)
         let radiusCircle = MKCircle(center: CLLocationCoordinate2D(
-                                        latitude: 34.0537767, longitude: -118.248), radius: 300 as CLLocationDistance)
+            latitude: 37.49273658206116, longitude: 126.67943089174322), radius: 300 as CLLocationDistance)
         view.addOverlay(radiusCircle)
         let locationCircle = MKCircle(center: CLLocationCoordinate2D(
-                                        latitude: 34.0537767, longitude: -118.248), radius: 3 as CLLocationDistance)
+            latitude: 37.49273658206116, longitude: 126.67943089174322), radius: 3 as CLLocationDistance)
         view.addOverlay(locationCircle)
+        
+        // 모달을 띄우는 부분
+//        if let selectedAnnotation = selectedAnnotation {
+//            ModalView(annotation: selectedAnnotation, isPresented: $isModalPresented)
+//                .onDisappear {
+//                    // 모달이 닫힐 때 선택된 어노테이션 초기화
+//                    self.selectedAnnotation = nil
+//                }
+//        }
     }
     
 }

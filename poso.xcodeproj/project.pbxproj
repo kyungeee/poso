@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06051BE02B0902EF0055BAA6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06051BDF2B0902EF0055BAA6 /* HomeView.swift */; };
 		0607B2342B05034000373BBD /* posoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B2332B05034000373BBD /* posoApp.swift */; };
 		0607B2382B05034400373BBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0607B2372B05034400373BBD /* Assets.xcassets */; };
 		0607B23B2B05034400373BBD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0607B23A2B05034400373BBD /* Preview Assets.xcassets */; };
@@ -24,10 +25,12 @@
 		06EE652D2B073BDF005F8EC9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06EE652C2B073BDF005F8EC9 /* GoogleService-Info.plist */; };
 		06EE652F2B073CD4005F8EC9 /* MyCarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE652E2B073CD4005F8EC9 /* MyCarStore.swift */; };
 		06EE65322B073D92005F8EC9 /* MyCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE65312B073D92005F8EC9 /* MyCar.swift */; };
+		06EE65342B0749A1005F8EC9 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE65332B0749A1005F8EC9 /* InfoView.swift */; };
 		157FC8C0291541771EAC6835 /* Pods_poso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C0BAF0EE5A45C3DEB731B7 /* Pods_poso.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06051BDF2B0902EF0055BAA6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0607B2302B05034000373BBD /* poso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = poso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0607B2332B05034000373BBD /* posoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = posoApp.swift; sourceTree = "<group>"; };
 		0607B2372B05034400373BBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		06EE652C2B073BDF005F8EC9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		06EE652E2B073CD4005F8EC9 /* MyCarStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarStore.swift; sourceTree = "<group>"; };
 		06EE65312B073D92005F8EC9 /* MyCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCar.swift; sourceTree = "<group>"; };
+		06EE65332B0749A1005F8EC9 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		1ADFB91D8FFA499E9087BADE /* Pods-poso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-poso.release.xcconfig"; path = "Target Support Files/Pods-poso/Pods-poso.release.xcconfig"; sourceTree = "<group>"; };
 		69603FFC3C37AE43FF918E3C /* Pods-poso.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-poso.debug.xcconfig"; path = "Target Support Files/Pods-poso/Pods-poso.debug.xcconfig"; sourceTree = "<group>"; };
 		E1C0BAF0EE5A45C3DEB731B7 /* Pods_poso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_poso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +119,8 @@
 				0607B2692B0504DF00373BBD /* ContentView.swift */,
 				0607B26A2B0504DF00373BBD /* MyPageView.swift */,
 				0607B28C2B05D6A700373BBD /* ChartView.swift */,
+				06EE65332B0749A1005F8EC9 /* InfoView.swift */,
+				06051BDF2B0902EF0055BAA6 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,6 +312,8 @@
 				0607B28D2B05D6A700373BBD /* ChartView.swift in Sources */,
 				0607B26B2B0504DF00373BBD /* MapView.swift in Sources */,
 				0607B2342B05034000373BBD /* posoApp.swift in Sources */,
+				06051BE02B0902EF0055BAA6 /* HomeView.swift in Sources */,
+				06EE65342B0749A1005F8EC9 /* InfoView.swift in Sources */,
 				0607B2702B0504E600373BBD /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +358,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -413,7 +421,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

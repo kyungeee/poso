@@ -64,9 +64,16 @@ struct ProgressBar: View {
                 .rotationEffect(Angle(degrees: 270.0))
                 .animation(.linear)
 
-            Text(String(format: "%.0f %%", min(self.progress, 1.0)*100.0))
-                .font(.largeTitle)
-                .bold()
+            VStack(alignment: .center) {
+                HStack {
+                    Text("위험 상태⚠️")
+                        .font(.system(size: 15))
+                        .foregroundColor(.red)
+                }
+                Text(String(format: "%.0f %%", min(self.progress, 1.0)*100.0))
+                    .font(.largeTitle)
+                    .bold()
+            }
         }
     }
 }
