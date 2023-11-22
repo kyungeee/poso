@@ -14,8 +14,9 @@ import MessageUI
 
 struct MyPageView: View {
     // Replace YOUR_API_KEY in WeatherManager with your own API key for the app to work
+    @ObservedObject var carStore: CarStore
     @StateObject var locationManager = LocationManager()
-    @State var weather: ResponseBody
+//    @State var weather: Weather
     @State var rain: String = "0"
     @State var progressValue: Float = 0.8
     @State private var isMessageComposeVisible = false
@@ -27,17 +28,19 @@ struct MyPageView: View {
             VStack {
                 VStack(alignment: .leading, spacing: 5) {
                     HStack {
-                        Text(weather.name)
-                            .bold()
-                            .font(.title)
-                        
-                        VStack(spacing: 20) {
-                            Image(systemName: "cloud")
-                                .font(.system(size: 20))
+                        if let weather = carStore.weather {
+                            Text(weather.name)
+                                .bold()
+                                .font(.title)
                             
-//                            Text("\(weather.weather[0].main)")
+                            VStack(spacing: 20) {
+                                Image(systemName: "cloud")
+                                    .font(.system(size: 20))
+                                
+                                //                            Text("\(weather.weather[0].main)")
+                            }
+                            .frame(width: 150, alignment: .leading)
                         }
-                        .frame(width: 150, alignment: .leading)
                         
                     }
                     
@@ -98,8 +101,11 @@ struct MyPageView: View {
                         Spacer()
                         
                         Button(action: {
-//                            self.isMessageComposeVisible.toggle()
-                            
+                                                        self.isMessageComposeVisible.toggle()
+//                            sendMessage()
+                            //                            if let url = URL(string: "tel://119") {
+                            //                                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                            //                            }
                         }, label: {
                             VStack {
                                 Image(systemName: "exclamationmark.bubble.circle.fill")
@@ -138,11 +144,21 @@ struct MyPageView: View {
 //                        }
                     }
                     
-                    HStack {
-                        WeatherRow(logo: "cloud.rain", name: "precipitation", value: "\(rain)mm")
-                        Spacer()
-                        WeatherRow(logo: "humidity", name: "Humidity", value: "\(weather.main.humidity.roundDouble())%")
+                    if let weather = carStore.weather {
+                        HStack {
+                            WeatherRow(logo: "cloud.rain", name: "precipitation", value: "\(weather.rain?.the1H ?? 0)mm")
+                            Spacer()
+                            WeatherRow(logo: "humidity", name: "Humidity", value: "\(weather.main.humidity)%")
+                        }
                     }
+                    
+//                    HStack {
+//                        if let car = carStore.car {
+//                            WeatherRow(logo: "cloud.rain", name: "logtitude", value: "\(car.logitude)")
+//                            Spacer()
+//                            WeatherRow(logo: "humidity", name: "latitude", value: "\(car.latitude)")
+//                        }
+//                    }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
@@ -158,9 +174,9 @@ struct MyPageView: View {
         .background(Color(hue: 0.656, saturation: 0.787, brightness: 0.354))
 //        .preferredColorScheme(.dark)
         .onAppear {
-            if let rainData = weather.rain {
-                self.rain = String(rainData.the1H)
-            }
+//            if let rainData = weather.rain {
+//                self.rain = String(rainData.the1H)
+//            }
         }
     }
     

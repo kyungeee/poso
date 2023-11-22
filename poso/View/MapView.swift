@@ -42,13 +42,13 @@ class MapViewCoordinator: NSObject, MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if let circleOverlay = overlay as? MKCircle {
-              let circleRenderer = MKCircleRenderer(circle: circleOverlay)
-              circleRenderer.fillColor = UIColor.red.withAlphaComponent(0.1) // Set the fill color of the circle
+            let circleRenderer = MKCircleRenderer(circle: circleOverlay)
+            circleRenderer.fillColor = UIColor.red.withAlphaComponent(0.1) // Set the fill color of the circle
             circleRenderer.strokeColor = UIColor.red // Set the border color of the circle
-              circleRenderer.lineWidth = 1 // Set the border width
-              return circleRenderer
-          }
-          return MKOverlayRenderer(overlay: overlay)
+            circleRenderer.lineWidth = 1 // Set the border width
+            return circleRenderer
+            }
+        return MKOverlayRenderer(overlay: overlay)
     }
     
     /// This is where the delegate gets the object for the selected annotation
@@ -69,18 +69,23 @@ struct MapView: UIViewRepresentable {
 //                                                latitude: 34.055404, longitude: -118.249278),CLLocationCoordinate2D(
 //                                                    latitude: 34.054097, longitude: -118.249664), CLLocationCoordinate2D(latitude: 34.053786, longitude: -118.247636)]
     
-    var markers: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(
-        latitude: 37.49273658206116, longitude: 126.67943089174322)]
+    @ObservedObject var carStore: CarStore
+    @ObservedObject var locationManager: LocationManager
     
+//carStore: CarStore, latitude: Double, longitude: Double, markers: [CLLocationCoordinate2D], convertedMarkers: [LandmarkAnnotation]
     
-    var convertedMarkers: [LandmarkAnnotation] = []
+//    self.carStore = carStore
+//        self.latitude = latitude
+//        self.longitude = longitude
+//        self.convertedMarkers = convertedMarkers
     
-    init() {
-        convertedMarkers = cordToMark(locations: self.markers)
-    }
+//    init() {
+//        convertedMarkers = cordToMark(locations: self.markers)
+//    }
     
     func makeUIView(context: Context) -> MKMapView{
-        MKMapView(frame: .zero)
+        let mapView = MKMapView(frame: .zero)
+        return mapView
     }
     
     func cordToMark(locations: [CLLocationCoordinate2D]) -> [LandmarkAnnotation] {
@@ -97,8 +102,12 @@ struct MapView: UIViewRepresentable {
     }
     
     func updateUIView(_ view: MKMapView, context: Context){
+        let latitude = carStore.latitude
+        let longitude = carStore.longitude
+        
+        print("updateUIView lat: \(latitude), long: \(longitude)")
         let coordinate = CLLocationCoordinate2D(
-            latitude: 37.49273658206116, longitude: 126.67943089174322)
+            latitude: latitude, longitude: longitude)
         let mapCamera = MKMapCamera()
         mapCamera.centerCoordinate = coordinate
         mapCamera.pitch = 10
@@ -106,22 +115,20 @@ struct MapView: UIViewRepresentable {
         view.camera = mapCamera
         view.mapType = .mutedStandard
         view.delegate = context.coordinator
-        view.addAnnotations(self.convertedMarkers)
+        view.addAnnotations(carStore.convertedMarkers)
+        
+        // 기존의 overlay를 제거
+        view.removeOverlays(view.overlays)
+      
+        // 새로운 overlay 추가
         let radiusCircle = MKCircle(center: CLLocationCoordinate2D(
-            latitude: 37.49273658206116, longitude: 126.67943089174322), radius: 300 as CLLocationDistance)
+            latitude: latitude, longitude: longitude), radius: 300 as CLLocationDistance)
         view.addOverlay(radiusCircle)
         let locationCircle = MKCircle(center: CLLocationCoordinate2D(
-            latitude: 37.49273658206116, longitude: 126.67943089174322), radius: 3 as CLLocationDistance)
+            latitude: latitude, longitude: longitude), radius: 3 as CLLocationDistance)
         view.addOverlay(locationCircle)
         
-        // 모달을 띄우는 부분
-//        if let selectedAnnotation = selectedAnnotation {
-//            ModalView(annotation: selectedAnnotation, isPresented: $isModalPresented)
-//                .onDisappear {
-//                    // 모달이 닫힐 때 선택된 어노테이션 초기화
-//                    self.selectedAnnotation = nil
-//                }
-//        }
     }
+    
     
 }

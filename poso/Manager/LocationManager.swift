@@ -15,6 +15,12 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var location: CLLocationCoordinate2D?
     @Published var isLoading = false
     
+    @Published var latitude: Double = 0.0
+    @Published var longitude: Double = 0.0
+    @Published var markers: [CLLocationCoordinate2D] = []
+    @Published var convertedMarkers: [LandmarkAnnotation] = []
+    
+    
     override init() {
         super.init()
         
@@ -39,6 +45,16 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error getting location", error)
         isLoading = false
+    }
+    
+    func updateMarkerLocation(lat: Double, long: Double) {
+        self.latitude = lat
+        self.longitude = long
+        self.markers = [CLLocationCoordinate2D(latitude: lat, longitude: long)]
+        for cord in markers {
+            let mark = LandmarkAnnotation(title: "MyCar", subtitle: "MyGenesis", coordinate: cord)
+            self.convertedMarkers = [mark]
+        }
     }
 }
 

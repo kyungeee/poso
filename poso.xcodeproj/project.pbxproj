@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		06051BE02B0902EF0055BAA6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06051BDF2B0902EF0055BAA6 /* HomeView.swift */; };
+		06051BE22B0A33B90055BAA6 /* CarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06051BE12B0A33B80055BAA6 /* CarStore.swift */; };
+		06051BE42B0B0EC70055BAA6 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06051BE32B0B0EC70055BAA6 /* Weather.swift */; };
 		0607B2342B05034000373BBD /* posoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B2332B05034000373BBD /* posoApp.swift */; };
 		0607B2382B05034400373BBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0607B2372B05034400373BBD /* Assets.xcassets */; };
 		0607B23B2B05034400373BBD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0607B23A2B05034400373BBD /* Preview Assets.xcassets */; };
@@ -21,16 +23,38 @@
 		0607B2862B0505CB00373BBD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B2832B0505CB00373BBD /* LocationManager.swift */; };
 		0607B2882B05061600373BBD /* WeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B2872B05061600373BBD /* WeatherRow.swift */; };
 		0607B28D2B05D6A700373BBD /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B28C2B05D6A700373BBD /* ChartView.swift */; };
-		06EE652B2B073432005F8EC9 /* FirebaseRealTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE652A2B073432005F8EC9 /* FirebaseRealTimeManager.swift */; };
-		06EE652D2B073BDF005F8EC9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06EE652C2B073BDF005F8EC9 /* GoogleService-Info.plist */; };
-		06EE652F2B073CD4005F8EC9 /* MyCarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE652E2B073CD4005F8EC9 /* MyCarStore.swift */; };
+		0607D87D2B0CD9820043DEE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0607D87C2B0CD7290043DEE6 /* GoogleService-Info.plist */; };
+		0607D87F2B0D1F190043DEE6 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607D87E2B0D1F180043DEE6 /* MessageViewController.swift */; };
+		0607D8812B0E2C6F0043DEE6 /* 침수구역.json in Resources */ = {isa = PBXBuildFile; fileRef = 0607D8802B0E2C6F0043DEE6 /* 침수구역.json */; };
+		0607D8832B0E2CA10043DEE6 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607D8822B0E2CA00043DEE6 /* Location.swift */; };
+		068900592B0C64E20052B986 /* FirebaseAnalytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068900582B0C64E20052B986 /* FirebaseAnalytics.xcframework */; };
+		0689005A2B0C64E20052B986 /* FirebaseAnalytics.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 068900582B0C64E20052B986 /* FirebaseAnalytics.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0689005D2B0C64F40052B986 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689005C2B0C64F40052B986 /* AdSupport.framework */; };
 		06EE65322B073D92005F8EC9 /* MyCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE65312B073D92005F8EC9 /* MyCar.swift */; };
 		06EE65342B0749A1005F8EC9 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE65332B0749A1005F8EC9 /* InfoView.swift */; };
 		157FC8C0291541771EAC6835 /* Pods_poso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C0BAF0EE5A45C3DEB731B7 /* Pods_poso.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0689005B2B0C64E20052B986 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0689005A2B0C64E20052B986 /* FirebaseAnalytics.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		06051BDF2B0902EF0055BAA6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		06051BE12B0A33B80055BAA6 /* CarStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarStore.swift; sourceTree = "<group>"; };
+		06051BE32B0B0EC70055BAA6 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		06051BE52B0B8D260055BAA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		06051BE82B0BB59E0055BAA6 /* poso.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = poso.entitlements; sourceTree = "<group>"; };
 		0607B2302B05034000373BBD /* poso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = poso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0607B2332B05034000373BBD /* posoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = posoApp.swift; sourceTree = "<group>"; };
 		0607B2372B05034400373BBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,9 +69,12 @@
 		0607B2842B0505CB00373BBD /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		0607B2872B05061600373BBD /* WeatherRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRow.swift; sourceTree = "<group>"; };
 		0607B28C2B05D6A700373BBD /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
-		06EE652A2B073432005F8EC9 /* FirebaseRealTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRealTimeManager.swift; sourceTree = "<group>"; };
-		06EE652C2B073BDF005F8EC9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		06EE652E2B073CD4005F8EC9 /* MyCarStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarStore.swift; sourceTree = "<group>"; };
+		0607D87C2B0CD7290043DEE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0607D87E2B0D1F180043DEE6 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		0607D8802B0E2C6F0043DEE6 /* 침수구역.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "침수구역.json"; path = "../../../../Downloads/침수구역.json"; sourceTree = "<group>"; };
+		0607D8822B0E2CA00043DEE6 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		068900582B0C64E20052B986 /* FirebaseAnalytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseAnalytics.xcframework; path = Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework; sourceTree = "<group>"; };
+		0689005C2B0C64F40052B986 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		06EE65312B073D92005F8EC9 /* MyCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCar.swift; sourceTree = "<group>"; };
 		06EE65332B0749A1005F8EC9 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		1ADFB91D8FFA499E9087BADE /* Pods-poso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-poso.release.xcconfig"; path = "Target Support Files/Pods-poso/Pods-poso.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,6 +88,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				157FC8C0291541771EAC6835 /* Pods_poso.framework in Frameworks */,
+				068900592B0C64E20052B986 /* FirebaseAnalytics.xcframework in Frameworks */,
+				0689005D2B0C64F40052B986 /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +117,8 @@
 		0607B2322B05034000373BBD /* poso */ = {
 			isa = PBXGroup;
 			children = (
+				06051BE82B0BB59E0055BAA6 /* poso.entitlements */,
+				06051BE52B0B8D260055BAA6 /* Info.plist */,
 				0607B2332B05034000373BBD /* posoApp.swift */,
 				0607B2822B0505CB00373BBD /* Manager */,
 				06EE65302B073D7F005F8EC9 /* Model */,
@@ -97,7 +128,8 @@
 				0607B28A2B0518FE00373BBD /* Ex */,
 				0607B2712B0504F600373BBD /* ModelData.swift */,
 				0607B2372B05034400373BBD /* Assets.xcassets */,
-				06EE652C2B073BDF005F8EC9 /* GoogleService-Info.plist */,
+				0607D8802B0E2C6F0043DEE6 /* 침수구역.json */,
+				0607D87C2B0CD7290043DEE6 /* GoogleService-Info.plist */,
 				0607B2392B05034400373BBD /* Preview Content */,
 			);
 			path = poso;
@@ -114,13 +146,14 @@
 		0607B2662B0504DF00373BBD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0607B2672B0504DF00373BBD /* MapView.swift */,
-				0607B2682B0504DF00373BBD /* WelcomeView.swift */,
 				0607B2692B0504DF00373BBD /* ContentView.swift */,
 				0607B26A2B0504DF00373BBD /* MyPageView.swift */,
+				06051BDF2B0902EF0055BAA6 /* HomeView.swift */,
+				0607B2672B0504DF00373BBD /* MapView.swift */,
+				0607B2682B0504DF00373BBD /* WelcomeView.swift */,
 				0607B28C2B05D6A700373BBD /* ChartView.swift */,
 				06EE65332B0749A1005F8EC9 /* InfoView.swift */,
-				06051BDF2B0902EF0055BAA6 /* HomeView.swift */,
+				0607D87E2B0D1F180043DEE6 /* MessageViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -130,7 +163,6 @@
 			children = (
 				0607B2842B0505CB00373BBD /* WeatherManager.swift */,
 				0607B2832B0505CB00373BBD /* LocationManager.swift */,
-				06EE652A2B073432005F8EC9 /* FirebaseRealTimeManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -154,7 +186,7 @@
 		0607B28B2B05C93A00373BBD /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				06EE652E2B073CD4005F8EC9 /* MyCarStore.swift */,
+				06051BE12B0A33B80055BAA6 /* CarStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -163,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				06EE65312B073D92005F8EC9 /* MyCar.swift */,
+				06051BE32B0B0EC70055BAA6 /* Weather.swift */,
+				0607D8822B0E2CA00043DEE6 /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,6 +204,8 @@
 		86DE6BE541AD653E985827FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0689005C2B0C64F40052B986 /* AdSupport.framework */,
+				068900582B0C64E20052B986 /* FirebaseAnalytics.xcframework */,
 				E1C0BAF0EE5A45C3DEB731B7 /* Pods_poso.framework */,
 			);
 			name = Frameworks;
@@ -196,6 +232,7 @@
 				0607B22D2B05034000373BBD /* Frameworks */,
 				0607B22E2B05034000373BBD /* Resources */,
 				EDBF7012C6EA54457A9FE19D /* [CP] Embed Pods Frameworks */,
+				0689005B2B0C64E20052B986 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -244,8 +281,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0607D8812B0E2C6F0043DEE6 /* 침수구역.json in Resources */,
+				0607D87D2B0CD9820043DEE6 /* GoogleService-Info.plist in Resources */,
 				0607B23B2B05034400373BBD /* Preview Assets.xcassets in Resources */,
-				06EE652D2B073BDF005F8EC9 /* GoogleService-Info.plist in Resources */,
 				0607B2382B05034400373BBD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,15 +341,17 @@
 				0607B26E2B0504DF00373BBD /* MyPageView.swift in Sources */,
 				06EE65322B073D92005F8EC9 /* MyCar.swift in Sources */,
 				0607B2852B0505CB00373BBD /* WeatherManager.swift in Sources */,
+				0607D8832B0E2CA10043DEE6 /* Location.swift in Sources */,
+				06051BE22B0A33B90055BAA6 /* CarStore.swift in Sources */,
 				0607B2862B0505CB00373BBD /* LocationManager.swift in Sources */,
 				0607B26D2B0504DF00373BBD /* ContentView.swift in Sources */,
 				0607B2882B05061600373BBD /* WeatherRow.swift in Sources */,
+				06051BE42B0B0EC70055BAA6 /* Weather.swift in Sources */,
 				0607B26C2B0504DF00373BBD /* WelcomeView.swift in Sources */,
-				06EE652B2B073432005F8EC9 /* FirebaseRealTimeManager.swift in Sources */,
-				06EE652F2B073CD4005F8EC9 /* MyCarStore.swift in Sources */,
 				0607B28D2B05D6A700373BBD /* ChartView.swift in Sources */,
 				0607B26B2B0504DF00373BBD /* MapView.swift in Sources */,
 				0607B2342B05034000373BBD /* posoApp.swift in Sources */,
+				0607D87F2B0D1F190043DEE6 /* MessageViewController.swift in Sources */,
 				06051BE02B0902EF0055BAA6 /* HomeView.swift in Sources */,
 				06EE65342B0749A1005F8EC9 /* InfoView.swift in Sources */,
 				0607B2702B0504E600373BBD /* Extensions.swift in Sources */,
@@ -373,7 +413,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -430,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -446,12 +486,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = poso/poso.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"poso/Preview Content\"";
-				DEVELOPMENT_TEAM = 53HTR6RHK8;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Z8GC9N3WDL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = poso/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -462,8 +506,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pkkyung.poso;
+				PRODUCT_BUNDLE_IDENTIFIER = com.poso.poso;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = WonderPark;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -476,12 +522,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = poso/poso.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"poso/Preview Content\"";
-				DEVELOPMENT_TEAM = 53HTR6RHK8;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Z8GC9N3WDL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = poso/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -492,8 +542,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pkkyung.poso;
+				PRODUCT_BUNDLE_IDENTIFIER = com.poso.poso;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = WonderPark;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
