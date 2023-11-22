@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - MyCar Model
 class MyCar: Decodable {
     let latitude: String
     let logitude: String

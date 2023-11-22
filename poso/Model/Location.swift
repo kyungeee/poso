@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: - Location Model
 struct LocationData: Codable {
     let objectId: Int
     let number: String
@@ -29,6 +30,13 @@ struct LocationData: Codable {
         case shapeLength = "shape_Length"
         case shapeArea = "shape_Area"
     }
+}
+
+// 거리에 다른 위험 수준 열거형 정의
+enum DangerLevel: String {
+    case low = "Low"
+    case medium = "Medium"
+    case high = "High"
 }
 
 //do {

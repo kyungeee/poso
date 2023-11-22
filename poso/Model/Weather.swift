@@ -6,6 +6,7 @@
 //
 
 // Model of the response body we get from calling the OpenWeather API
+// MARK: - Weather Model
 struct Weather: Decodable {
     var coord: CoordinatesResponse
     var weather: [WeatherResponse]
