@@ -146,7 +146,6 @@ extension CarStore {
 
 extension CarStore {
     
-    
     // HTTP request to get the current weather depending on the coordinates we got from LocationManager
     func getCurrentWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) async throws  {
         guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=48532a5e16bd27acbb55cf0c9b778afc&units=metric") else { fatalError("Missing URL") }
@@ -164,5 +163,28 @@ extension CarStore {
     
 }
 
-
+extension CarStore {
+    
+    func assessDangerLevelBetweenNodes(node1: CLLocationCoordinate2D, node2: CLLocationCoordinate2D) -> DangerLevel {
+        // 거리 계산 및 위험 여부 판단 로직
+        // DangerLevel은 열거형으로 정의하여 적절한 위험 수준을 표현합니다.
+        // 예: .low, .medium, .high
+        
+        let location1 = CLLocation(latitude: node1.latitude, longitude: node1.longitude)
+        let location2 = CLLocation(latitude: node2.latitude, longitude: node2.longitude)
+        
+        let distance = location1.distance(from: location2) / 1000 // 거리를 킬로미터로 변환
+        
+        // 여기에 거리에 따른 위험 수준 판단 로직 추가
+        if distance < 10.0 {
+            return .low
+        } else if distance < 50.0 {
+            return .medium
+        } else {
+            return .high
+        }
+        
+    }
+    
+}
 
