@@ -62,23 +62,12 @@ class MapViewCoordinator: NSObject, MKMapViewDelegate {
 
 
 struct MapView: UIViewRepresentable {
-//    @State var isModalPresented: Bool
-//    @State private var selectedAnnotation: LandmarkAnnotation? = nil
-    
-//    var markers: [CLLocationCoordinate2D] = [CLLocationCoordinate2D(
-//                                                latitude: 34.055404, longitude: -118.249278),CLLocationCoordinate2D(
-//                                                    latitude: 34.054097, longitude: -118.249664), CLLocationCoordinate2D(latitude: 34.053786, longitude: -118.247636)]
+
     
     @ObservedObject var carStore: CarStore
     @ObservedObject var locationManager: LocationManager
     
-//carStore: CarStore, latitude: Double, longitude: Double, markers: [CLLocationCoordinate2D], convertedMarkers: [LandmarkAnnotation]
-    
-//    self.carStore = carStore
-//        self.latitude = latitude
-//        self.longitude = longitude
-//        self.convertedMarkers = convertedMarkers
-    
+
 //    init() {
 //        convertedMarkers = cordToMark(locations: self.markers)
 //    }

@@ -24,14 +24,12 @@
 		0607B2882B05061600373BBD /* WeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B2872B05061600373BBD /* WeatherRow.swift */; };
 		0607B28D2B05D6A700373BBD /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607B28C2B05D6A700373BBD /* ChartView.swift */; };
 		0607D87D2B0CD9820043DEE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0607D87C2B0CD7290043DEE6 /* GoogleService-Info.plist */; };
-		0607D87F2B0D1F190043DEE6 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607D87E2B0D1F180043DEE6 /* MessageViewController.swift */; };
 		0607D8812B0E2C6F0043DEE6 /* 침수구역.json in Resources */ = {isa = PBXBuildFile; fileRef = 0607D8802B0E2C6F0043DEE6 /* 침수구역.json */; };
 		0607D8832B0E2CA10043DEE6 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607D8822B0E2CA00043DEE6 /* Location.swift */; };
 		068900592B0C64E20052B986 /* FirebaseAnalytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068900582B0C64E20052B986 /* FirebaseAnalytics.xcframework */; };
 		0689005A2B0C64E20052B986 /* FirebaseAnalytics.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 068900582B0C64E20052B986 /* FirebaseAnalytics.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0689005D2B0C64F40052B986 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0689005C2B0C64F40052B986 /* AdSupport.framework */; };
 		06EE65322B073D92005F8EC9 /* MyCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE65312B073D92005F8EC9 /* MyCar.swift */; };
-		06EE65342B0749A1005F8EC9 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE65332B0749A1005F8EC9 /* InfoView.swift */; };
 		157FC8C0291541771EAC6835 /* Pods_poso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C0BAF0EE5A45C3DEB731B7 /* Pods_poso.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,13 +68,11 @@
 		0607B2872B05061600373BBD /* WeatherRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRow.swift; sourceTree = "<group>"; };
 		0607B28C2B05D6A700373BBD /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		0607D87C2B0CD7290043DEE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		0607D87E2B0D1F180043DEE6 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		0607D8802B0E2C6F0043DEE6 /* 침수구역.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "침수구역.json"; path = "../../../../Downloads/침수구역.json"; sourceTree = "<group>"; };
 		0607D8822B0E2CA00043DEE6 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		068900582B0C64E20052B986 /* FirebaseAnalytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseAnalytics.xcframework; path = Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework; sourceTree = "<group>"; };
 		0689005C2B0C64F40052B986 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		06EE65312B073D92005F8EC9 /* MyCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCar.swift; sourceTree = "<group>"; };
-		06EE65332B0749A1005F8EC9 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		1ADFB91D8FFA499E9087BADE /* Pods-poso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-poso.release.xcconfig"; path = "Target Support Files/Pods-poso/Pods-poso.release.xcconfig"; sourceTree = "<group>"; };
 		69603FFC3C37AE43FF918E3C /* Pods-poso.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-poso.debug.xcconfig"; path = "Target Support Files/Pods-poso/Pods-poso.debug.xcconfig"; sourceTree = "<group>"; };
 		E1C0BAF0EE5A45C3DEB731B7 /* Pods_poso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_poso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,8 +148,6 @@
 				0607B2672B0504DF00373BBD /* MapView.swift */,
 				0607B2682B0504DF00373BBD /* WelcomeView.swift */,
 				0607B28C2B05D6A700373BBD /* ChartView.swift */,
-				06EE65332B0749A1005F8EC9 /* InfoView.swift */,
-				0607D87E2B0D1F180043DEE6 /* MessageViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -351,9 +345,7 @@
 				0607B28D2B05D6A700373BBD /* ChartView.swift in Sources */,
 				0607B26B2B0504DF00373BBD /* MapView.swift in Sources */,
 				0607B2342B05034000373BBD /* posoApp.swift in Sources */,
-				0607D87F2B0D1F190043DEE6 /* MessageViewController.swift in Sources */,
 				06051BE02B0902EF0055BAA6 /* HomeView.swift in Sources */,
-				06EE65342B0749A1005F8EC9 /* InfoView.swift in Sources */,
 				0607B2702B0504E600373BBD /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

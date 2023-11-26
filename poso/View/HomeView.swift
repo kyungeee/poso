@@ -30,25 +30,23 @@ struct HomeView: View {
         ZStack {
             MapView(carStore: carStore, locationManager: locationManager)
                 .ignoresSafeArea(edges: .top)
-//                .sheet(isPresented: $isModalPresented) {
-//                    ModalView()
-//                        .presentationDetents([.height(250)])
-//                        .presentationCornerRadius(20)
-//                        .padding(.bottom, 100)
-//                }
-            
             VStack {
                 Spacer()
                 VStack() {
                     VStack {
                         HStack{
+                            Spacer()
                             Text("MyGenesis")
                                 .font(.largeTitle)
                                 .bold()
                                 .foregroundColor(.black)
                             Spacer()
                         }
-                        Text("내 차량 위치: 19 Janggogae-ro 309beon-gil, Seo-gu, Incheon")
+                        .padding(.bottom, 2)
+                        Text("현재 차량 위치: 인천대학교 지하 1층 지하주차장 B-11")
+                            .font(.caption)
+                            .foregroundColor(.black)
+                        Text("차량 번호: 331소 8967")
                             .font(.caption)
                             .foregroundColor(.black)
                     }.padding(.bottom, 20)
@@ -58,51 +56,25 @@ struct HomeView: View {
                     
                     HStack {
                         HStack {
-                            //                            WeatherRow(logo: "cloud.rain", name: "precipitation", value: "50mm").frame(height: 20)
-                            //                            Spacer()
-                            //                            WeatherRow(logo: "exclamationmark.triangle.fill", name: "위험단계", value: "높음").frame(height: 20)
-                            //
-                            
                             if let data = carStore.car, let weather = carStore.weather {
-                                HomeRow(title: "지역", description: "safe")
-                                    .padding(.trailing, 10)
+//                                HomeRow(title: "지역", description: "\(carStore.floodSafetyZoneStatus.rawValue)")
+//                                    .padding(.trailing, 5)
+                                HomeRow(title: "지역", description: "High")
+                                    .padding(.trailing, 5)
                                 VerticalDivider()
-                                HomeRow(title: "강수량", description: "\(weather.rain?.the1H ?? 0)mm")
-                                    .padding(.horizontal, 10)
+//                                HomeRow(title: "강수량", description: "\(weather.rain?.the1H ?? 0)mm")
+//                                    .padding(.horizontal, 5)
+                                HomeRow(title: "강수량", description: "250mm")
+                                    .padding(.horizontal, 5)
                                 VerticalDivider()
                                 HomeRow(title: "물 감지 센서", description: data.waterValue)
-                                    .padding(.leading, 10)
+                                    .padding(.leading, 5)
                                 VerticalDivider()
                                 HomeRow(title: "위험 단계", description: data.waterDetectionLevel)
-                                    .padding(.leading, 10)
+                                    .padding(.leading, 5)
                             }
                             
                         }
-                        //                        Text("센서 물 감지 퍼센트")
-                        //                            .fontWeight(.light)
-                        //                            .padding(.bottom, -10)
-                        
-                        //                        HStack {
-                        //                            Spacer()
-                        //                            ProgressBar(progress: self.$progressValue)
-                        //                                .frame(width: 150.0, height: 150.0)
-                        //                                .padding(40.0)
-                        //                            Spacer()
-                        //                        }
-                        
-                        //                        Button(action: {
-                        //                            self.incrementProgress()
-                        //                        }) {
-                        //                            HStack {
-                        //                                Image(systemName: "plus.rectangle.fill")
-                        //                                Text("Increment")
-                        //                            }
-                        //                            .padding(15.0)
-                        //                            .overlay(
-                        //                                RoundedRectangle(cornerRadius: 15.0)
-                        //                                    .stroke(lineWidth: 2.0)
-                        //                            )
-                        //                        }
                     }
                     
                 }
@@ -148,9 +120,6 @@ struct HomeRow: View {
                     .foregroundColor(Color.black)
             }
         }
-        //        .padding()
-        //        .background(Color(hue: 0.656, saturation: 0.787, brightness: 0.354))
-        //        .cornerRadius(20, corners: .allCorners)
     }
 }
 

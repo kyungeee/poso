@@ -17,6 +17,8 @@ final class CarStore: ObservableObject {
     @Published var markers: [CLLocationCoordinate2D] = []
     @Published var convertedMarkers: [LandmarkAnnotation] = []
     @Published var weather: Weather?
+    @Published var highRiskZones: [Location] = []
+    @Published var floodSafetyZoneStatus: DangerLevel = .low
     
     private lazy var databasePath: DatabaseReference? = {
         let ref = Database.database().reference().child("id6")
@@ -26,7 +28,6 @@ final class CarStore: ObservableObject {
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     
-
     func fetchInitialData() {
           guard let databasePath = databasePath else {
               return
@@ -161,29 +162,81 @@ extension CarStore {
         self.weather = decodedData
     }
     
+    func loadAndDecodeJSON(from fileName: String) {
+        guard let jsonData = loadJSONDataFromFile(named: fileName) else {
+            print("Failed to load JSON data from file.")
+            return
+        }
+        
+        let result: Result<[Location], Error> = decodeJSONData(jsonData, modelType: [Location].self)
+        
+        switch result {
+        case .success(let locations):
+            highRiskZones = locations
+        case .failure(let error):
+            print("Error decoding JSON: \(error)")
+        }
+    }
+    
+    
+    private func loadJSONDataFromFile(named fileName: String) -> Data? {
+        if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                return data
+            } catch {
+                print("Error reading JSON file: \(error)")
+            }
+        }
+        return nil
+    }
+    
+    private func decodeJSONData<T: Decodable>(_ jsonData: Data, modelType: T.Type) -> Result<T, Error> {
+        do {
+            let decodedData = try JSONDecoder().decode(modelType, from: jsonData)
+            return .success(decodedData)
+        } catch {
+            return .failure(error)
+        }
+    }
+    
 }
 
 extension CarStore {
     
-    func assessDangerLevelBetweenNodes(node1: CLLocationCoordinate2D, node2: CLLocationCoordinate2D) -> DangerLevel {
+    func assessDangerLevelBetweenNodes()  {
         // 거리 계산 및 위험 여부 판단 로직
         // DangerLevel은 열거형으로 정의하여 적절한 위험 수준을 표현합니다.
         // 예: .low, .medium, .high
         
-        let location1 = CLLocation(latitude: node1.latitude, longitude: node1.longitude)
-        let location2 = CLLocation(latitude: node2.latitude, longitude: node2.longitude)
+        // 최초로 거리를 구하기 위해 초기값 설정
+        var nearestDistance: CLLocationDistance = CLLocationDistance.infinity
+        var myLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
-        let distance = location1.distance(from: location2) / 1000 // 거리를 킬로미터로 변환
-        
-        // 여기에 거리에 따른 위험 수준 판단 로직 추가
-        if distance < 10.0 {
-            return .low
-        } else if distance < 50.0 {
-            return .medium
-        } else {
-            return .high
+        for zone in highRiskZones {
+            let zoneLocation = CLLocationCoordinate2D(latitude: zone.latitude, longitude: zone.longitude)
+            let distance = calculateDistance(from: myLocation, to: zoneLocation)
+            
+            // 최소 거리 업데이트
+            nearestDistance = min(nearestDistance, distance)
         }
         
+        // DangerLevel 판단
+        if nearestDistance < 10.0 {
+            floodSafetyZoneStatus = .low
+        } else if nearestDistance < 50.0 {
+            floodSafetyZoneStatus = .medium
+        } else {
+            floodSafetyZoneStatus = .high
+        }
+        
+    }
+    
+    // 두 좌표 간의 거리 계산
+    private func calculateDistance(from coordinate1: CLLocationCoordinate2D, to coordinate2: CLLocationCoordinate2D) -> CLLocationDistance {
+        let location1 = CLLocation(latitude: coordinate1.latitude, longitude: coordinate1.longitude)
+        let location2 = CLLocation(latitude: coordinate2.latitude, longitude: coordinate2.longitude)
+        return location1.distance(from: location2)
     }
     
 }

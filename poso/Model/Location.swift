@@ -8,7 +8,7 @@
 import Foundation
 
 //MARK: - Location Model
-struct LocationData: Codable {
+struct Location: Codable {
     let objectId: Int
     let number: String
     let districtName: String
@@ -32,30 +32,12 @@ struct LocationData: Codable {
     }
 }
 
-// 거리에 다른 위험 수준 열거형 정의
+//MARK: - 상습 침수 구역과 현재 차량 위치와의 거리에 따른 위험 수준 열거형 정의
 enum DangerLevel: String {
     case low = "Low"
     case medium = "Medium"
     case high = "High"
 }
 
-//do {
-//    let jsonData = jsonData.data(using: .utf8)!
-//    let locations = try JSONDecoder().decode([LocationData].self, from: jsonData)
-//    print(locations)
-//} catch {
-//    print("Error decoding JSON: \(error)")
-//}
 
-//{
-// "objectid": 1,
-// "no": "29",
-// "번호": "29",
-// "구명": "남구",
-// "침수구": "용현동 고속도로 종점",
-// "Latitude": 37.4517008,
-// "Longitude": 126.6470943,
-// "비고": "2012추가",
-// "shape_Length": 1754.971755600548,
-// "shape_Area": 117791.1303457599
-//}
+
